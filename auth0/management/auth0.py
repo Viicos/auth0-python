@@ -1,4 +1,5 @@
-from ..utils import is_async_available
+from typing import TYPE_CHECKING
+
 from .actions import Actions
 from .attack_protection import AttackProtection
 from .blacklists import Blacklists
@@ -85,3 +86,35 @@ class Auth0:
                 name,
                 cls(domain=domain, token=token, rest_options=rest_options),
             )
+
+    if TYPE_CHECKING:
+        actions: Actions
+        attack_protection: AttackProtection
+        blacklists: Blacklists
+        branding: Branding
+        client_credentials: ClientCredentials
+        client_grants: ClientGrants
+        clients: Clients
+        connections: Connections
+        custom_domains: CustomDomains
+        device_credentials: DeviceCredentials
+        email_templates: EmailTemplates
+        emails: Emails
+        grants: Grants
+        guardian: Guardian
+        hooks: Hooks
+        jobs: Jobs
+        log_streams: LogStreams
+        logs: Logs
+        organizations: Organizations
+        prompts: Prompts
+        resource_servers: ResourceServers
+        roles: Roles
+        rules_configs: RulesConfigs
+        rules: Rules
+        stats: Stats
+        tenants: Tenants
+        tickets: Tickets
+        user_blocks: UserBlocks
+        users_by_email: UsersByEmail
+        users: Users
